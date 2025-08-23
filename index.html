@@ -12,8 +12,12 @@
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 </head>
-<body class="bg-[#f4f5f7] h-[100vh] flex justify-center items-center">
-    <form class="w-[340px] bg-white rounder-3xl p-8">
+<body class="bg-[#f4f5f7] h-[100vh] flex flex-col justify-center items-center">
+
+    <div class="h-[130px] w-[340px] bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center">
+        <img src="assets/Group.png" alt="">
+    </div>
+    <form class="w-[340px] bg-white  p-8">
 
         <div class="font-semibold">
             <label for="">Mobile Number</label>
@@ -25,8 +29,13 @@
             <br>
              <input type="text" placeholder="Enter 4 Digit Pin" class="input mt-3 rounded-3xl" />
         </div>
-        <button class="btn btn-primary mt-3 w-full rounded-3xl">Log In</button>
+        <button id="logInButton" class="btn btn-primary mt-3 w-full rounded-3xl">Log In</button>
     </form>
     
+
+
+
+    <!--JS-->
+    <script src="script.js"></script>
 </body>
 </html>
