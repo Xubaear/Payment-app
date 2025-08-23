@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Payoo</title>
     
     <!--daisyui cdn-->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
@@ -14,7 +14,7 @@
 </head>
 <body class="bg-[#f4f5f7] h-[100vh] flex flex-col justify-center items-center">
 
-    <div class="h-[130px] w-[340px] bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center">
+    <div class="h-[130px] w-[300px] bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center">
         <img src="assets/Group.png" alt="">
     </div>
     <form class="w-[340px] bg-white  p-8">
@@ -22,12 +22,12 @@
         <div class="font-semibold">
             <label for="">Mobile Number</label>
             <br>
-            <input type="text" placeholder="Enter Your Name" class="input mt-3 rounded-3xl" />
+            <input type="text" placeholder="Enter Your Name" id="mobile-number" class="input mt-3 rounded-3xl" />
         </div>
         <div class="mt-5 font-semibold">
             <label for="">4 Digit Pin</label>
             <br>
-             <input type="text" placeholder="Enter 4 Digit Pin" class="input mt-3 rounded-3xl" />
+             <input type="text" placeholder="Enter 4 Digit Pin" id="pin-number" class="input mt-3 rounded-3xl" />
         </div>
         <button id="logInButton" class="btn btn-primary mt-3 w-full rounded-3xl">Log In</button>
     </form>
