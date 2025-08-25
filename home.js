@@ -93,6 +93,8 @@ if(pin !== validPin){
     
     setInnerText(totalAvailableBalance)
 
+    alert('Money Credited')
+
 })
 
 
@@ -123,12 +125,43 @@ if( agentPin !==  aPin){
 }
 
     setInnerText(totalAvailableBalance)
+    alert('Money Debited')
 })
 
-
+const tPin = 1234
 //  tranfer money
-document.getElementById('transfer-btn').addEventListener('click', function(e){
-e,preventDefault( )
+document.getElementById('send-btn').addEventListener('click', function(e){
+e.preventDefault( )
+
+const userAccountNumber = document.getElementById('transfer-money').value
+
+    const amount = getInputValueNumber('transfer-amount')
+
+    const transferPin = getInputValueNumber('transfer-pin')
+
+    const availableBalance= getInnerText('available-balance')
+
+    var totalAvailableBalance = availableBalance - amount
+    console.log(totalAvailableBalance)
+    
+
+    if(userAccountNumber.length < 11){
+        alert('Please provide valid account number')
+        return;
+     }
+if( transferPin !== tPin){
+    alert('Please provide a valid pin number')
+    return;
+}
+
+var totalAvailableBalance = availableBalance - amount
+    console.log(totalAvailableBalance)
+    
+ setInnerText (totalAvailableBalance);
+
+    alert('Money transferred successfully!');
+
+
 })
 
 
