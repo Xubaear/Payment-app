@@ -1,14 +1,64 @@
 const validPin = 1234;
+
+
+//  Reusable Function for number
+
+function getInputValueNumber (id){
+    const inputField = document.getElementById(id)
+    const inputFieldValue = inputField.value
+    const inputFieldNumber = parseInt(inputFieldValue)
+    return inputFieldNumber;
+}
+
+//  Reusable Function for string
+
+function getInputValue(id){
+    const inputField = document.getElementById(id)
+    const inputFieldValue = inputField.value
+    return inputFieldValue
+}
+
+//  Reusable Function for innertext
+function getInnerText (id){
+    const element = document.getElementById(id)
+    const elementValue = element.innerText
+    const elementValueNumber = parseInt(elementValue)
+    return elementValueNumber
+}
+
+//function to set innertext
+
+function setInnerText(value){
+    const availableBalanceElemnt = document.getElementById('available-balance')
+    availableBalanceElemnt.innerText = value
+}
+
+// function to toggle
+function handleToggle(id){
+     const forms =document.getElementsByClassName('form')
+
+    for(const form  of forms){
+        form.style.display= 'none'
+    }
+
+    document.getElementById(id).style.display ='block'
+}
+
+
 // add money 
 document.getElementById('add-money-btn').addEventListener('click', function(e){
-    e.preventDefault();
-    const bank = document.getElementById('bank').value;
+    e.preventDefault();  
+
+    const bank = getInputValue('bank')
+
     const account = document.getElementById('account-number').value;
-    const amount = parseInt(document.getElementById('add-amount').value);
-    const pin = parseInt(document.getElementById('add-pin').value);
+
+    const amount = getInputValueNumber('add-amount')
+
+    const pin = getInputValueNumber('add-pin')
    
 
-    const availableBalance = parseInt(document.getElementById('available-balance').innerText);
+    const availableBalance = getInnerText('available-balance')
    
      console.log(availableBalance)
 
@@ -25,7 +75,8 @@ if(pin !== validPin){
 
     var totalAvailableBalance = amount + availableBalance;
 
-    document.getElementById('available-balance').innerText= totalAvailableBalance;
+    
+    setInnerText(totalAvailableBalance)
 
 })
 
@@ -37,11 +88,11 @@ document.getElementById('withdraw-btn').addEventListener('click', function(e){
 
     const agentNumber = document.getElementById('agent-number').value
 
-    const amount = parseInt(document.getElementById('withdraw-amount').value)
+    const amount = getInputValueNumber('withdraw-amount')
 
-    const agentPin = parseInt(document.getElementById('agent-pin').value)
+    const agentPin = getInputValueNumber('agent-pin')
 
-    const availableBalance= parseInt(document.getElementById('available-balance').innerText)
+    const availableBalance= getInnerText('available-balance')
     
 
     var totalAvailableBalance = availableBalance - amount
@@ -56,21 +107,27 @@ if( agentPin !==  aPin){
     return;
 }
 
-    document.getElementById('available-balance').innerText= totalAvailableBalance
+    setInnerText(totalAvailableBalance)
 })
 
 
+//  tranfer money
+document.getElementById('transfer-btn').addEventListener('click', function(e){
+e,preventDefault( )
+})
 
 
 
 //  toggling feature
 
 document.getElementById('add-btn').addEventListener('click', function(){
-    document.getElementById('cash-out-parent').style.display = 'none'
-    document.getElementById('add-money-parent').style.display= 'block'
+    handleToggle("add-money-parent")
 })
+
 document.getElementById('cash-out-btn').addEventListener('click', function(){
-    document.getElementById('add-money-parent').style.display= 'none'
-    document.getElementById('cash-out-parent').style.display = 'block'
-    
+     handleToggle("cash-out-parent")
+})
+
+document.getElementById("transfer-btn").addEventListener('click', function(){
+     handleToggle("transfer-money-parent")
 })
