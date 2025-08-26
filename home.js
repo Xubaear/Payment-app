@@ -167,6 +167,12 @@ document.getElementById('get-bonus-btn').addEventListener('click', function(e){
    
 })
 
+//pay bill
+document.getElementById('pay-btn').addEventListener('click', function(e){
+    e.preventDefault()
+
+})
+
 
 
 //  toggling feature
@@ -194,5 +200,10 @@ document.getElementById('bonus-btn').addEventListener('click', function(){
     
     handleButtonToggle('bonus-btn')
 
-    
+})
+
+document.getElementById('bill-btn').addEventListener('click', function(){
+    handleToggle('pay-bill-parent')
+
+    handleButtonToggle('bill-btn')
 })
