@@ -60,7 +60,7 @@
             <img src="assets/purse1.png" class="mx-auto ">
             <h2>Pay Bill</h2>
         </div>
-        <div class="border-1 border-gray-300 text-center p-5 rounded-xl">
+        <div id="transactions-btn" class="form-btn border-1 border-gray-300 text-center p-5 rounded-xl">
             <img src="assets/transaction1.png" class="mx-auto ">
             <h2>Transactions</h2>
         </div>
@@ -184,6 +184,28 @@
     <button id="pay-btn" class="btn btn-primary mt-3 w-full rounded-3xl">Pay Now</button>
   </form>
 </div>
+
+<!--transactions-->
+<div class="form" id="transactions-parent" style="display: none;">
+    <div class="flex justify-between items-center"><h2 class=" mt-9 font-bold ml-2">Transactions</h2>
+    <p class="mt-6 mr-2 text-[#898989]">View All</p></div>
+    
+    <div id="transaction-container">
+        <div class="bg-white rounded-xl p-3 flex justify-between items-center mt-3">
+            <div class="flex items-center">
+                <div class="p-3 rounded-full bg-[#F4F5F7]">
+                    <img src="assets/wallet1.png" class="mx-auto">
+                </div>
+                <div class="ml-3">
+                    <h1>Electricity Bill</h1>
+                    <p>Today</p>
+                </div>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+    </div>
+</div>
+
 
 </div>
 

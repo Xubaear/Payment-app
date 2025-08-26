@@ -1,3 +1,5 @@
+const transactionData =[]
+
 //  Reusable Function for number
 
 function getInputValueNumber (id){
@@ -92,6 +94,11 @@ if(pin !== validPin){
 
     alert('Money Credited')
 
+    const data= {
+        name: "Add Money",
+        date: new Date().toLocaleTimeString()
+    }
+    transactionData.push(data)
 })
 
 
@@ -123,6 +130,12 @@ if( agentPin !==  aPin){
 
     setInnerText(totalAvailableBalance)
     alert('Money Debited')
+
+     const data= {
+        name: "Cash Out",
+        date: new Date().toLocaleTimeString()
+    }
+    transactionData.push(data)
 })
 
 const tPin = 1234
@@ -164,6 +177,12 @@ var totalAvailableBalance = availableBalance - amount
 //  get bonus
 document.getElementById('get-bonus-btn').addEventListener('click', function(e){
     e.preventDefault()
+
+     const data= {
+        name: "Transfered Money",
+        date: new Date().toLocaleTimeString()
+    }
+    transactionData.push(data)
    
 })
 
@@ -171,9 +190,36 @@ document.getElementById('get-bonus-btn').addEventListener('click', function(e){
 document.getElementById('pay-btn').addEventListener('click', function(e){
     e.preventDefault()
 
+     const data= {
+        name: "Bill Paid",
+        date: new Date().toLocaleTimeString()
+    }
+    transactionData.push(data)
+
 })
 
+document.getElementById('transactions-btn').addEventListener('click', function(){
+    const transactionContainer = document.getElementById('transaction-container')
+    transactionContainer.innerText= ''
 
+    for(const data of transactionData){
+        const div = document.createElement('div')
+        div.innerHTML= `
+        <div class="bg-white rounded-xl p-3 flex justify-between items-center mt-3">
+            <div class="flex items-center">
+                <div class="p-3 rounded-full bg-[#F4F5F7]">
+                    <img src="assets/wallet1.png" class="mx-auto">
+                </div>
+                <div class="ml-3">
+                    <h1>${data.name}</h1>
+                    <p>${data.date}</p>
+                </div>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>`
+        transactionContainer.appendChild(div)
+    }
+})
 
 //  toggling feature
 
@@ -206,4 +252,10 @@ document.getElementById('bill-btn').addEventListener('click', function(){
     handleToggle('pay-bill-parent')
 
     handleButtonToggle('bill-btn')
+})
+
+document.getElementById('transactions-btn').addEventListener('click', function(){
+    handleToggle('transactions-parent')
+
+    handleButtonToggle('transactions-btn')
 })
