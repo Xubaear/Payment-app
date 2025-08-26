@@ -102,7 +102,7 @@ if(pin !== validPin){
 })
 
 
-const aPin = 4321;
+const aPin = 1234;
 // cashout money
 document.getElementById('withdraw-btn').addEventListener('click', function(e){
     e.preventDefault();
