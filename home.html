@@ -52,11 +52,11 @@
             <img src="assets/money1.png" class="mx-auto ">
             <h2>Transfer Money</h2>
         </div>
-        <div class="border-1 border-gray-300 text-center p-5 rounded-xl">
+        <div id="bonus-btn" class="form-btn border-1 border-gray-300 text-center p-5 rounded-xl">
             <img src="assets/bonus1.png" class="mx-auto ">
             <h2>Get Bonus</h2>
         </div>
-        <div class="border-1 border-gray-300 text-center p-5 rounded-xl">
+        <div id="bill-btn" class="form-btn border-1 border-gray-300 text-center p-5 rounded-xl">
             <img src="assets/purse1.png" class="mx-auto ">
             <h2>Pay Bill</h2>
         </div>
@@ -141,9 +141,22 @@
     <button id="send-btn" class="btn btn-primary mt-3 w-full rounded-3xl">Send Now</button>
 </form>
 </div>
+
+<!--get bonus-->
+<div class="form" id="get-bonus-parent" style="display: none;">
+    <h2 class=" mt-9 font-bold ml-2">Get Bonus</h2>
+    <form class="bg-white rounded-lg p-8 mt-5">
+<div class="font-semibold text-gray-500"><label for="">Enter Bonus Coupon</label>
+            <br>
+             <input id="bonus-coupon" type="text" placeholder="Enter your coupon"  class="input mt-3 rounded-3xl bg-[#F4F5F7] w-full" /></div>
+
+    <button id="get-bonus-btn" class="btn btn-primary mt-3 w-full rounded-3xl">Get Bonus</button>
+
+    </form>
+</div>
 </div>
 
-  </div>
+  
 
 
 <script src="home.js"></script>

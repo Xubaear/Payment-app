@@ -1,6 +1,3 @@
-const validPin = 1234;
-
-
 //  Reusable Function for number
 
 function getInputValueNumber (id){
@@ -59,7 +56,7 @@ function handleButtonToggle(id){
 }
 
 
-
+const validPin = 1234;
 // add money 
 document.getElementById('add-money-btn').addEventListener('click', function(e){
     e.preventDefault();  
@@ -164,6 +161,12 @@ var totalAvailableBalance = availableBalance - amount
 
 })
 
+//  get bonus
+document.getElementById('get-bonus-btn').addEventListener('click', function(e){
+    e.preventDefault()
+   
+})
+
 
 
 //  toggling feature
@@ -184,4 +187,12 @@ document.getElementById("transfer-btn").addEventListener('click', function(){
      handleToggle("transfer-money-parent")
 
      handleButtonToggle('transfer-btn')
+})
+
+document.getElementById('bonus-btn').addEventListener('click', function(){
+    handleToggle('get-bonus-parent')
+    
+    handleButtonToggle('bonus-btn')
+
+    
 })
